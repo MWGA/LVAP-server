@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="LVAP-server:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/LVAP_server_jar</output-path>
+    <root id="archive" name="LVAP-server.jar">
+      <element id="module-output" name="LVAP-server" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/sqlite-jdbc-3.21.0.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
