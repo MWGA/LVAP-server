@@ -1,6 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="LVAP-API">
-    <output-path>$PROJECT_DIR$/out/artifacts/LVAP_API</output-path>
-    <root id="archive" name="LVAP-API.jar" />
-  </artifact>
-</component>
