@@ -1,0 +1,27 @@
+        //first test entry
+        String ssid1 = "eduroam";
+        String ip1 = "187.150.55.2";
+        String mac01 = "9f:0a:35:ef:68:16";
+        String bssid01 = "ee:ee:cc:cd:18:e5";
+        LVAP_struct sulec = new LVAP_struct(ip1,mac01,bssid01,ssid1,0);
+
+        //second test entry
+        String ssid2 = "Guest";
+        String ip2 = "152.158.55.5";
+        String mac02 = "55:5a:a5:5a:aa:8a";
+        String bssid02 = "ee:ee:aa:91:aa:aa";
+        LVAP_struct hepi = new LVAP_struct(ip2,mac02,bssid02,ssid2,1);
+
+        //third test entry
+        String ssid3 = "vraH";
+        String ip3 = "210.210.215.28";
+        String mac03 = "45:08:8b:8d:d8:e6";
+        String bssid03 = "ee:ee:ff:ff:ee:ee";
+        LVAP_struct opicka = new LVAP_struct(ip3,mac03,bssid03,ssid3,1);
+
+        //fourth test entry
+        String ssid4 = "Sulec 5G";
+        String ip4 = "12.20.6.155";
+        String mac04 = "ab:ca:55:f3:fb:c7";
+        String bssid04 = "ee:ee:c4:da:da:57";
+        LVAP_struct trubicka = new LVAP_struct(ip4,mac04,bssid04,ssid4,1);
