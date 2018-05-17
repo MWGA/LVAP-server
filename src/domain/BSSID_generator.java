@@ -34,17 +34,16 @@ public class BSSID_generator {
     public static String getUniqueBSSID(String m) {
 
         //will be needed later for byte overwrite
-        String tmp_mac;
         String e_mac = "ee:ee:ee:ee:ee:ee";
-        tmp_mac = e_mac; // ee:ee:ee:ee:ee:ee MAC
-        byte[] tmp_byte = tmp_mac.getBytes(); //6 bytes
+        
+        byte[] tmp_byte = e_mac.getBytes(); //6 bytes
 
         //dumb init
         String BSSID = null;
-
+        StringBuilder BSSID_ret = null;
         //dat dvojbodky z MAC adresy do prec
         m= m.replace(":", "");
-
+        
         //convert from MacAddress to bytes
         byte[] buffer = m.getBytes();
 
@@ -55,11 +54,15 @@ public class BSSID_generator {
             byte[] digest = Arrays.copyOfRange(md.digest(),0,6); //take the first 6 bytes from the fingerprint
 
             //overwrite specific bytes in byte array with byte value of 'e' ...hork's wish
-            digest[0] = tmp_byte[0];
-            digest[1] = tmp_byte[1];
+            //digest[0] = tmp_byte[0];
+            //digest[1] = tmp_byte[1];
 
             //BSSID = digest.toString();
             BSSID = bytesToHex(digest);
+            
+            BSSID_ret = new StringBuilder(BSSID);
+            BSSID_ret.setCharAt(0, 'E');
+            BSSID_ret.setCharAt(1, 'E');
 
         } catch (NoSuchAlgorithmException e) {
             // TODO Auto-generated catch block
@@ -70,15 +73,15 @@ public class BSSID_generator {
         //System.out.println("Povodna MAC je : "+ toStr(m));
         //System.out.println("BSSID MAC je : "+ toStr(BSSID));
 
-        return BSSID;
+        return BSSID_ret.toString();
 
     }
 
     public static void main(String[] args) {
         String mac_addr = null;
         mac_addr = "ab:ca:55:f3:fb:c7";
-        String converted_mac = getUniqueBSSID(mac_addr);
-        
+        System.out.println("Posielam tam:" + mac_addr);
+        String converted_mac = getUniqueBSSID(mac_addr);       
         System.out.println(converted_mac);
     }
 
